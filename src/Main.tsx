@@ -15,6 +15,10 @@ import EmployeeListScreen from './screens/main/business/EmployeeListScreen';
 import ItemCatScreen from './screens/main/business/ItemCatScreen';
 import EditCategoryScreen from './screens/main/business/EditCategoryScreen';
 import CategoryList from './screens/main/business/CategoryListScreen';
+import ItemsListScreen from './screens/main/business/ItemsListScreen';
+import ItemsEditScreen from './screens/main/business/ItemsEditScreen';
+import ReceiptListScreen from './screens/main/receipt/ReceiptListScreen';
+import SubscriptionListScreen from './screens/main/subscription/SubscriptionListScreen';
 
 const Stack = createStackNavigator();
 
@@ -70,6 +74,26 @@ function Main() {
           }} />
 
           <Stack.Screen name="ItemCatScreen" component={ItemCatScreen} options={{
+            headerShown: false, gestureEnabled: true,
+            ...TransitionPresets.SlideFromRightIOS, // Apply slide-from-right transition
+          }} />
+
+          <Stack.Screen name="ItemListScreen" component={ItemsListScreen} options={{
+            headerShown: false, gestureEnabled: true,
+            ...TransitionPresets.SlideFromRightIOS, // Apply slide-from-right transition
+          }} />
+
+          <Stack.Screen name="ItemEditScreen" component={ItemsEditScreen} options={{
+            headerShown: false, gestureEnabled: true,
+            ...TransitionPresets.BottomSheetAndroid, // Apply slide-from-right transition
+          }} />
+
+          <Stack.Screen name="ReceiptListScreen" component={ReceiptListScreen} options={{
+            headerShown: false, gestureEnabled: true,
+            ...TransitionPresets.SlideFromRightIOS, // Apply slide-from-right transition
+          }} />
+
+          <Stack.Screen name="SubscriptionListScreen" component={SubscriptionListScreen} options={{
             headerShown: false, gestureEnabled: true,
             ...TransitionPresets.SlideFromRightIOS, // Apply slide-from-right transition
           }} />

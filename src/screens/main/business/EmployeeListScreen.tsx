@@ -18,13 +18,13 @@ function EmployeeListScreen({ navigation }) {
                     color: 'white',
                     fontFamily: 'Lato-Regular'
                 }}
-                onPress={() => navigation.navigate('EmployeCreateScreen')}
+                onPress={() => navigation.navigate('EmployeCreateScreen', {item: false})}
             />
 
             <HorizontalLine style={{ marginTop: 15, marginBottom: 15 }} color={'gray'} />
 
             {data.map((item, index) => (
-                <StaffComponent screenName={"EmployeCreateScreen"} item={index} title={"Staff-"+item} navigation={navigation} />
+                <StaffComponent screenName={"EmployeCreateScreen"} item={item} title={"Staff-"+item} navigation={navigation} />
             ))}
 
         </ScrollView>

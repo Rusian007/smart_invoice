@@ -31,7 +31,7 @@ function EditCategoryScreen({ navigation }) {
                     {item ? (
                         <Text style={{ fontFamily: 'Lato-Bold', fontSize: 18, color: COLORS.black }}> {item} </Text>
                     ) : (
-                        <TextInput style={styles.inputStyle} />
+                        <TextInput placeholder='Enter Category' style={styles.inputStyle} />
                     )}
                 </View>
                 <HorizontalLine style={{ marginTop: 10, marginBottom: 10 }} color={'gray'} />

@@ -1,16 +1,17 @@
-import { Button, Icon, Text } from '@rneui/base'
 import React from 'react'
-import { Dimensions, StyleSheet, TextInput, View } from 'react-native'
+import { ScrollView, StyleSheet, TextInput, View } from 'react-native'
 import { COLORS } from '../../../utils/colors'
 import BottomHeader from '../../../components/BottomHeader'
-import { CheckBox } from '@rneui/themed';
-import SelectDropdown from 'react-native-select-dropdown'
+import { Button, Icon, Text } from '@rneui/base'
 import HorizontalLine from '../../../components/HorizontalLine'
-import { ScrollView } from 'react-native-gesture-handler'
+import { CheckBox } from '@rneui/themed'
 import { useRoute } from '@react-navigation/native'
-function EmployeeScreen() {
-    const roles = ["Cashier", "Waiter", "Admin"];
-    const [activationStatus, setActivationStatus] = React.useState(false);
+import SelectDropdown from 'react-native-select-dropdown'
+
+function ItemsEditScreen({ navigation }) {
+
+    const roles = ["Burger", "Milk", "Pizza"];
+    const [uploadStatus, setUploadStatus] = React.useState(false);
     const route = useRoute();
     const { item } = route.params;
 
@@ -18,9 +19,15 @@ function EmployeeScreen() {
     const InputForm = () => {
         return (
             <View>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
+                    <Text style={styles.InputLabel}>Name: </Text>
+                    <TextInput placeholder='Enter Item Name' style={styles.inputStyle} />
+                </View>
+
+                <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Role: </Text>
+                    <Text style={styles.InputLabel}>Category: </Text>
                     <SelectDropdown
                         buttonStyle={{ backgroundColor: 'white', borderRadius: 8, elevation: 5, shadowColor: 'gray' }}
                         data={roles}
@@ -39,39 +46,38 @@ function EmployeeScreen() {
                     />
                 </View>
 
+
+
+                <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
+
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Name: </Text>
-                    <TextInput placeholder='Enter Name' style={styles.inputStyle} />
+                    <Text style={styles.InputLabel}>PRICE: </Text>
+                    <TextInput placeholder='Enter price' style={styles.inputStyle} />
                 </View>
 
                 <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Phone Number: </Text>
-                    <TextInput placeholder='Enter Phone' style={styles.inputStyle} />
+                    <Text style={styles.InputLabel}>COST: </Text>
+                    <TextInput placeholder='Enter Production Cost' style={styles.inputStyle} />
                 </View>
 
                 <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Password: </Text>
-                    <TextInput secureTextEntry placeholder='Enter Password' style={styles.inputStyle} />
-                </View>
-
-                <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
-
-                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Address: </Text>
-                    <TextInput placeholder='Enter Address' style={styles.inputStyle} />
+                    <Text style={styles.InputLabel}>QUANTITY: </Text>
+                    <TextInput placeholder='[ Enter Quantity ]' style={styles.inputStyle} />
                 </View>
 
                 <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Activation Status: </Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={styles.InputLabel}>Image upload: </Text>
+                        <Button title={"Click Here"} type='outline' />
+                    </View>
                     <CheckBox
-                        checked={activationStatus}
-                        onPress={() => { setActivationStatus(x => !x) }}
+                        checked={uploadStatus}
                         iconType="material-community"
                         checkedIcon="checkbox-outline"
                         uncheckedIcon={'checkbox-blank-outline'}
@@ -81,31 +87,9 @@ function EmployeeScreen() {
 
                 <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
 
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Discount Access: </Text>
-                    <CheckBox
-                        checked={false}
-                        onPress={() => { }}
-                        iconType="material-community"
-                        checkedIcon="checkbox-outline"
-                        uncheckedIcon={'checkbox-blank-outline'}
-                        containerStyle={{ backgroundColor: COLORS.lightBackgroundColor, }}
-                    />
-                </View>
 
-                <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
 
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Receipt Access: </Text>
-                    <CheckBox
-                        checked={false}
-                        onPress={() => { }}
-                        iconType="material-community"
-                        checkedIcon="checkbox-outline"
-                        uncheckedIcon={'checkbox-blank-outline'}
-                        containerStyle={{ backgroundColor: COLORS.lightBackgroundColor, }}
-                    />
-                </View>
+
             </View>
         )
     }
@@ -116,43 +100,42 @@ function EmployeeScreen() {
             <View>
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Role: </Text>
-                    <Text style={styles.InputLabel}>Cashier </Text>
-                </View>
-
-                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
                     <Text style={styles.InputLabel}>Name: </Text>
-                    <Text style={styles.InputLabel}>Dummy Name </Text>
+                    <Text style={styles.InputLabel}>Cheese Burger </Text>
+                </View>
+                <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
+                    <Text style={styles.InputLabel}>Category: </Text>
+                    <Text style={styles.InputLabel}>Burger </Text>
                 </View>
 
                 <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Phone Number: </Text>
-                    <Text style={styles.InputLabel}>018373***40 </Text>
+                    <Text style={styles.InputLabel}>Price: </Text>
+                    <Text style={styles.InputLabel}>350 /- </Text>
                 </View>
 
                 <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Password: </Text>
-                    <Text style={styles.InputLabel}>********** </Text>
+                    <Text style={styles.InputLabel}>Cost: </Text>
+                    <Text style={styles.InputLabel}>100  /- </Text>
                 </View>
 
                 <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Address: </Text>
-                    <Text style={styles.InputLabel}>32, Dummy, Address -1000 </Text>
+                    <Text style={styles.InputLabel}>Quantity: </Text>
+                    <Text style={styles.InputLabel}>[ 32 ]</Text>
                 </View>
 
                 <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Activation Status: </Text>
+                    <Text style={styles.InputLabel}>Image Uploaded: </Text>
                     <CheckBox
                         checked={true}
-
                         iconType="material-community"
                         checkedIcon="checkbox-outline"
                         uncheckedIcon={'checkbox-blank-outline'}
@@ -162,31 +145,7 @@ function EmployeeScreen() {
 
                 <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
 
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Discount Access: </Text>
-                    <CheckBox
-                        checked={false}
 
-                        iconType="material-community"
-                        checkedIcon="checkbox-outline"
-                        uncheckedIcon={'checkbox-blank-outline'}
-                        containerStyle={{ backgroundColor: COLORS.lightBackgroundColor, }}
-                    />
-                </View>
-
-                <HorizontalLine color={'gray'} style={{ marginTop: 5, marginBottom: 15 }} />
-
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-                    <Text style={styles.InputLabel}>Receipt Access: </Text>
-                    <CheckBox
-                        checked={true}
-
-                        iconType="material-community"
-                        checkedIcon="checkbox-outline"
-                        uncheckedIcon={'checkbox-blank-outline'}
-                        containerStyle={{ backgroundColor: COLORS.lightBackgroundColor, }}
-                    />
-                </View>
             </View>
         )
     }
@@ -196,8 +155,8 @@ function EmployeeScreen() {
             <View style={styles.container}>
                 <View>
 
-                    <View style={{ justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center', marginBottom: 50 }}>
-                        <BottomHeader txt={"Employee Account"} />
+                    <View style={{ justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center', }}>
+                        <BottomHeader txt={"Items/Category"} />
 
                         {item ? (
                             <></>
@@ -209,6 +168,12 @@ function EmployeeScreen() {
                             />
                         )}
 
+                    </View>
+
+                    <View style={{ backgroundColor: COLORS.textColor, padding: 10, marginTop: 10, marginBottom: 50 }}>
+                        <Text style={{ fontFamily: 'Lato-Regular', fontSize: 18, color: 'white', textTransform: 'uppercase', textAlign: 'center' }}>
+                            ITEMS
+                        </Text>
                     </View>
 
                     {item ? (
@@ -227,15 +192,15 @@ function EmployeeScreen() {
         </ScrollView>
     )
 }
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
+        paddingHorizontal: 25,
+        marginBottom: 20,
         flex: 1,
         backgroundColor: COLORS.lightBackgroundColor,
-        paddingHorizontal: 25,
-        justifyContent: 'space-between',
-        marginBottom: 20
-    }
-    , InputLabel: {
+
+    },
+    InputLabel: {
         fontFamily: 'Lato-Bold',
         fontSize: 16,
         color: COLORS.black,
@@ -253,4 +218,5 @@ let styles = StyleSheet.create({
         shadowColor: 'gray',
     }
 })
-export default EmployeeScreen
+
+export default ItemsEditScreen

@@ -38,14 +38,14 @@ function HomeScreen({ navigation }) {
                     description={"BILLS,INVOICE SEARCH"}
                     navigation={navigation}
                     Iconparams={{ name: 'receipt-outline', size: 40, type: 'ionicon' }}
-                    screenName={""} />
+                    screenName={"ReceiptListScreen"} />
                 <HorizontalLine />
                 <SelectItemsComponent
                     title={"SUBSCRIPTION "}
                     description={"PAID,DUE"}
                     navigation={navigation}
                     Iconparams={{ name: 'wallet-outline', size: 40, type: 'ionicon' }}
-                    screenName={""} />
+                    screenName={"SubscriptionListScreen"} />
 
             </View>
 

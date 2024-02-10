@@ -33,6 +33,7 @@ function ItemCatScreen({navigation}) {
                             fontFamily: 'Lato-Regular',
                             textTransform: 'uppercase'
                         }}
+                        onPress={() => navigation.navigate('ItemListScreen')}
                     />
                 </View>
 
