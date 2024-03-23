@@ -34,11 +34,24 @@ function LoginScreen({ navigation }) {
 
 
   const Inputs = () => {
+    const [username, setUsename] = React.useState('');
+    const handleLogin = () => {
+      if (username === 'admin') {
+        navigation.replace('Home')
+        return;
+      } else {
+        navigation.replace('StaffHome');
+        return;
+      }
+
+    }
     return (
       <View>
         <View>
           <Input inputContainerStyle={{ borderColor: COLORS.black }}
             placeholder='Phone Number'
+            value={username}
+            onChangeText={setUsename}
             style={styles.inputStyle}
             placeholderTextColor={COLORS.black} />
         </View>
@@ -60,7 +73,7 @@ function LoginScreen({ navigation }) {
         </TouchableOpacity>
 
         <Button
-          onPress={() => navigation.replace('Home')}
+          onPress={handleLogin}
           type='clear' containerStyle={{ backgroundColor: COLORS.textColor, paddingVertical: 5 }}>
           <Text style={{ color: COLORS.lightColor, fontSize: 16, fontFamily: 'Lato-Bold' }}>
             Log In

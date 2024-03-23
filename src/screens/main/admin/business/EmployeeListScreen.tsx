@@ -1,10 +1,10 @@
 import { Button, Icon, Text } from '@rneui/base'
 import React from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
-import { COLORS } from '../../../utils/colors'
-import HorizontalLine from '../../../components/HorizontalLine'
-import StaffComponent from '../../../components/StaffComponent'
-import BottomHeader from '../../../components/BottomHeader'
+import { COLORS } from '../../../../utils/colors'
+import HorizontalLine from '../../../../components/HorizontalLine'
+import StaffComponent from '../../../../components/StaffComponent'
+import BottomHeader from '../../../../components/BottomHeader'
 
 function EmployeeListScreen({ navigation }) {
     const data = [1, 2, 3, 4, 5];

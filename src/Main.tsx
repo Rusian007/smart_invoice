@@ -1,24 +1,28 @@
 import 'react-native-gesture-handler';
 import React from 'react'
-import { StatusBar, View } from 'react-native'
+import { StatusBar, Text, View } from 'react-native'
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import LoginScreen from './screens/auth/LoginScreen';
-import HomeScreen from './screens/main/HomeScreen';
+import HomeScreen from './screens/main/admin/HomeScreen';
 import { Header } from '@rneui/themed'
 import { Icon } from "@rneui/base";
 import { COLORS } from './utils/colors';
 import BackButtonComponent from './components/BackButtonComponent';
-import SetBusinessScreen from './screens/main/SetBusinessScreen';
-import BusinessScreen from './screens/main/business/BusinessScreen';
-import EmployeeScreen from './screens/main/business/EmployeeScreen';
-import EmployeeListScreen from './screens/main/business/EmployeeListScreen';
-import ItemCatScreen from './screens/main/business/ItemCatScreen';
-import EditCategoryScreen from './screens/main/business/EditCategoryScreen';
-import CategoryList from './screens/main/business/CategoryListScreen';
-import ItemsListScreen from './screens/main/business/ItemsListScreen';
-import ItemsEditScreen from './screens/main/business/ItemsEditScreen';
-import ReceiptListScreen from './screens/main/receipt/ReceiptListScreen';
-import SubscriptionListScreen from './screens/main/subscription/SubscriptionListScreen';
+import SetBusinessScreen from './screens/main/admin/SetBusinessScreen';
+import BusinessScreen from './screens/main/admin/business/BusinessScreen';
+import EmployeeScreen from './screens/main/admin/business/EmployeeScreen';
+import EmployeeListScreen from './screens/main/admin/business/EmployeeListScreen';
+import ItemCatScreen from './screens/main/admin/business/ItemCatScreen';
+import EditCategoryScreen from './screens/main/admin/business/EditCategoryScreen';
+import CategoryList from './screens/main/admin/business/CategoryListScreen';
+import ItemsListScreen from './screens/main/admin/business/ItemsListScreen';
+import ItemsEditScreen from './screens/main/admin/business/ItemsEditScreen';
+import ReceiptListScreen from './screens/main/admin/receipt/ReceiptListScreen';
+import SubscriptionListScreen from './screens/main/admin/subscription/SubscriptionListScreen';
+import StaffHomeScreen from './screens/staff/StaffHomeScreen';
+import ItemSelectScreen from './screens/staff/ItemSelectScreen';
+import CenterHeaderComponent from './components/CenterHeaderComponent';
+import RightHeaderComponent from './components/RightHeaderComponent';
 
 const Stack = createStackNavigator();
 
@@ -98,16 +102,53 @@ function Main() {
             ...TransitionPresets.SlideFromRightIOS, // Apply slide-from-right transition
           }} />
 
+
+          {/* Staff routes */}
+          <Stack.Screen name="StaffHome" component={StaffHomeScreen} options={{
+            headerShown: false, gestureEnabled: true,
+            ...TransitionPresets.SlideFromRightIOS, // Apply slide-from-right transition
+          }} />
+
         </Stack.Navigator>
       </>
 
     )
   }
 
+
+  const StaffHome = ({ navigation }) => {
+    return (<>
+      <StatusBar hidden={true} />
+      <Header
+
+        containerStyle={{
+          backgroundColor: COLORS.staffBackground,
+          alignItems: 'center',
+        }}
+        leftComponent={<BackButtonComponent navigation={navigation} />}
+        centerComponent={<CenterHeaderComponent />}
+        rightComponent={<RightHeaderComponent />}
+      />
+
+      <Stack.Navigator initialRouteName='StaffHomeScreen'>
+        <Stack.Screen name="StaffHomeScreen" component={StaffHomeScreen} options={{
+          headerShown: false, gestureEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS, // Apply slide-from-right transition
+        }} />
+        <Stack.Screen name="ItemSelectScreen" component={ItemSelectScreen} options={{
+          headerShown: false, gestureEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS, // Apply slide-from-right transition
+        }} />
+      </Stack.Navigator>
+    </>
+    );
+  }
+
   return (
     <Stack.Navigator initialRouteName='Login'>
       <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+      <Stack.Screen name="StaffHome" component={StaffHome} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }

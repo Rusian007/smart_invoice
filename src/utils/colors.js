@@ -6,5 +6,8 @@ export const COLORS = {
     backgroundColorLight: "#ffa832",
     backgroundColorLighter: "#f4ba6c",
     lightColor: "#fff",
-    lightBackgroundColor: " #f8f8f8 "
+    lightBackgroundColor: " #f8f8f8 ",
+
+    staffBackground: "#ffdfd2",
+    itemBackgroundColor: "#01001c"
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import BottomHeader from '../../../components/BottomHeader'
-import { COLORS } from '../../../utils/colors'
+import BottomHeader from '../../../../components/BottomHeader'
+import { COLORS } from '../../../../utils/colors'
 
 function SubscriptionListScreen() {
     return (

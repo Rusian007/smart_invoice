@@ -1,13 +1,13 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { COLORS } from '../../utils/colors'
+import { COLORS } from '../../../utils/colors'
 import { Icon } from '@rneui/base';
 import { Text } from '@rneui/themed';
-import SelectItemsComponent from '../../components/SelectItemsComponent';
-import HorizontalLine from '../../components/HorizontalLine';
+import SelectItemsComponent from '../../../components/SelectItemsComponent';
+import HorizontalLine from '../../../components/HorizontalLine';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import HomeHeader from '../../components/HomeHeader';
-import HomeFooterComponent from '../../components/HomeFooterComponent';
+import HomeHeader from '../../../components/HomeHeader';
+import HomeFooterComponent from '../../../components/HomeFooterComponent';
 
 function HomeScreen({ navigation }) {
 

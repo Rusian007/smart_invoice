@@ -1,10 +1,10 @@
 import React from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
-import { COLORS } from '../../../utils/colors'
-import BottomHeader from '../../../components/BottomHeader'
+import { COLORS } from '../../../../utils/colors'
+import BottomHeader from '../../../../components/BottomHeader'
 import { FAB } from '@rneui/themed'
 import { Text } from '@rneui/base'
-import ItemComponent from '../../../components/ItemComponent'
+import ItemComponent from '../../../../components/ItemComponent'
 
 function ItemsListScreen({ navigation }) {
     let data = [

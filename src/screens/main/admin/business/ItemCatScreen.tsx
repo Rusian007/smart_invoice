@@ -1,8 +1,8 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { COLORS } from '../../../utils/colors'
+import { COLORS } from '../../../../utils/colors'
 import { Button, Icon, Text } from '@rneui/base'
-import BottomHeader from '../../../components/BottomHeader'
+import BottomHeader from '../../../../components/BottomHeader'
 
 function ItemCatScreen({navigation}) {
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
-import BottomHeader from '../../../components/BottomHeader'
+import BottomHeader from '../../../../components/BottomHeader'
 import { StyleSheet, View } from 'react-native'
-import { COLORS } from '../../../utils/colors'
+import { COLORS } from '../../../../utils/colors'
 import { SearchBar } from '@rneui/themed';
 
 function ReceiptListScreen() {

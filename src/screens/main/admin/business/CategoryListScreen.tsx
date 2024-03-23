@@ -1,9 +1,9 @@
 import React from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
-import { COLORS } from '../../../utils/colors'
-import BottomHeader from '../../../components/BottomHeader'
+import { COLORS } from '../../../../utils/colors'
+import BottomHeader from '../../../../components/BottomHeader'
 import { Text } from '@rneui/base'
-import StaffComponent from '../../../components/StaffComponent'
+import StaffComponent from '../../../../components/StaffComponent'
 import { FAB } from '@rneui/themed';
 
 function CategoryList({ navigation }) {

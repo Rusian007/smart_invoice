@@ -14,7 +14,7 @@ const HomeHeader = () => {
                 <Text style={{ fontSize: 20, textTransform: 'uppercase', fontFamily: 'Lato-Black', letterSpacing: -0.5 }}>ALI Asgar tamjid</Text>
                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start' }}>
                     <Icon name='dot-single' color={COLORS.textColor} size={25} type='entypo' />
-                    <Text style={{ fontSize: 15, fontFamily: 'Lato-Regular' }}>OWNER | 0183****560</Text>
+                    <Text style={{ fontSize: 15, fontFamily: 'Lato-Regular' }}>STATUS | 0183****560</Text>
                 </View>
 
             </View>

@@ -1,11 +1,11 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import HomeHeader from '../../components/HomeHeader';
-import { COLORS } from '../../utils/colors';
+import HomeHeader from '../../../components/HomeHeader';
+import { COLORS } from '../../../utils/colors';
 import { Text } from '@rneui/base';
-import HomeFooterComponent from '../../components/HomeFooterComponent';
-import SelectItemsComponent from '../../components/SelectItemsComponent';
-import HorizontalLine from '../../components/HorizontalLine';
+import HomeFooterComponent from '../../../components/HomeFooterComponent';
+import SelectItemsComponent from '../../../components/SelectItemsComponent';
+import HorizontalLine from '../../../components/HorizontalLine';
 
 function SetBusinessScreen({navigation}) {
     return (

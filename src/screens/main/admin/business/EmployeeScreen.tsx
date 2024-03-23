@@ -1,11 +1,11 @@
 import { Button, Icon, Text } from '@rneui/base'
 import React from 'react'
 import { Dimensions, StyleSheet, TextInput, View } from 'react-native'
-import { COLORS } from '../../../utils/colors'
-import BottomHeader from '../../../components/BottomHeader'
+import { COLORS } from '../../../../utils/colors'
+import BottomHeader from '../../../../components/BottomHeader'
 import { CheckBox } from '@rneui/themed';
 import SelectDropdown from 'react-native-select-dropdown'
-import HorizontalLine from '../../../components/HorizontalLine'
+import HorizontalLine from '../../../../components/HorizontalLine'
 import { ScrollView } from 'react-native-gesture-handler'
 import { useRoute } from '@react-navigation/native'
 function EmployeeScreen() {
